@@ -24,3 +24,7 @@ jobs:
 
     - name: Run Bash Script
       run: ./bash/sample.sh
+    
+    - name: Build Docker Image
+      run: docker build -t devops-lab-test ./docker
+
