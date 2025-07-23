@@ -17,7 +17,7 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y ansible
 
     - name: Ansible Syntax Check
-      run: ansible-playbook ansible/create_file.yml --syntax-check
+      run: ansible-playbook newproject/devops-lab/ansible/create_file.yml --syntax-check
 
     - name: Make Bash Script Executable
       run: chmod +x bash/sample.sh
