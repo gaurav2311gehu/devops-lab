@@ -1,0 +1,13 @@
+---
+  - name: Create a file
+    hosts: localhost 
+    become: true
+ 
+    tasks: 
+    - name: Creating a files
+      file: 
+       path: /tmp/ansible.txt 
+       state: touch 
+       owner: saini 
+       group: saini
+       mode: '0777'
