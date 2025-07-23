@@ -1,0 +1,26 @@
+name: DevOps Lab CI
+on: 
+  push:
+    branches: [main]
+    pull_request:
+       branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: action/checkout@v3
+
+    - name: Install Ansible
+      run: sudo apt-get update && sudo apt-get install -y ansible
+
+    - name: Ansible Syntax Check
+      run: ansible-playbook ansible/create-file.yml --syntax-check
+
+    - name: Make Bash Script Executable
+      run: chmod +x bash/sample.sh
+
+    - name: Run Bash Script
+      run: bash/bash/sample.sh
